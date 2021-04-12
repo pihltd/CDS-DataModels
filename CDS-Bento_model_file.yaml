@@ -1,0 +1,158 @@
+Nodes:
+  institution:
+    Props:
+      - institution_id
+      - institution_name
+      - institution_url
+  program:
+    Props:
+      - program_id
+      - program_name
+  project:
+    Props:
+      - project_id
+      - project_name
+      - project_acronym
+      - dbgap_accession_number
+  study:
+    Props:
+      - study_id
+      - study_name
+      - study_acronym
+  study_subject:
+    Props:
+      - study_subject_id
+      - study_subject_source_id
+      - disease_type
+      - taxon
+      - primary_site
+  sample:
+    Props:
+      - sample_id
+      - sample_type_id
+      - tissue_type
+      - sample_type
+      - passage_count
+      - sample_anatomic_site
+      - preservation_method
+      - tumor_descriptor
+      - tumor_code
+      - tumor_code_id
+  file:
+    Props:
+      - file_id
+      - file_description
+      - file_format
+      - file_location
+      - file_name
+      - file_size
+      - file_type
+      - md5sum
+  demographic_data:
+    Props:
+      - demographic_data_id
+      - days_to_birth
+      - days_to_death
+      - ethnicity
+      - gender
+      - race
+      - vital_status
+  therapeutic_procedure:
+    Props:
+      - therapeutic_procedure_id
+      - treatment_outcome
+      - treatment_type
+  diagnosis:
+    Props:
+      - diagnosis_id
+      - age_at_diagnosis
+      - cause_of_death
+      - concurrent_disease
+      - concurrent_disease_type
+      - date_of_diagnosis      
+      - days_to_birth
+      - days_to_death
+      - days_to_diagnosis     
+      - days_to_last_follow_up
+      - days_to_last_known_disease_status
+      - days_to_new_event
+      - days_to_recurrence
+      - last_known_disease_status      
+      - metastasis_at_diagnosis
+      - metastasis_at_diagnosis_site      
+      - morphology
+      - pathology_report
+      - percent_tumor_invasion     
+      - primary_diagnosis
+      - primary_gleason_grade
+      - prior_malignancy
+      - prior_treatment      
+      - site_of_resection_or_biopsy     
+      - tissue_or_organ_of_origin
+      - tumor_focality
+      - tumor_grade
+      - tumor_stage
+
+Relationships:
+  of_institution:
+    Mul: many_to_many
+    Ends:
+      - Src: program
+        Dst: institution
+    Props: null
+  of_program:
+    Mul: many_to_one
+    Ends:
+      - Src: project
+        Dst: program
+      - Src: study
+        Dst: program
+      - Src: study_subject
+        Dst: program
+      - Src: file
+        Dst: program
+    Props: null
+  of_project:
+    Mul: many_to_one
+    Ends:
+      - Src: study_subject
+        Dst: project
+      - Src: file
+        Dst: project
+    Props: null
+  of_study:
+    Mul: many_to_one
+    Ends:
+      - Src: study_subject
+        Dst: study
+      - Src: file
+        Dst: study
+    Props: null
+  of_study_subject:
+    Mul: many_to_one
+    Ends:
+      - Src: sample
+        Dst: study_subject
+      - Src: demographic_data
+        Dst: study_subject
+      - Src: file
+        Dst: study_subject
+      - Src: diagnosis
+        Dst: study_subject
+    Props: null
+  of_sample:
+    Mul: many_to_one
+    Ends:
+      - Src: file
+        Dst: sample
+    Props: null
+  of_diagnosis:
+    Mul: many_to_one
+    Ends:
+      - Src: file
+        Dst: diagnosis
+      - Src: therapeutic_procedure
+        Dst: diagnosis
+      - Src: follow_up
+        Dst: diagnosis
+    Props: null
