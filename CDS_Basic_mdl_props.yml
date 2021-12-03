@@ -1,0 +1,534 @@
+PropDefinitions:
+  # Desc: Src: Type: Req:
+  # study props
+  study_title:
+    Desc: A value denoting the project or study that generated the data. 
+    Src: submission form
+    Type: string
+    Req: 'Yes'
+  short_description:
+    Desc: Short description that will identify the dataset on public pages. A clear and concise formula for the title would be like {methodology} of {organism} {sample info} 
+    Src: submission form
+    Type: string
+    Req: 'Yes'
+  pi_name:
+    Desc: Name of the Principal Investigator 
+    Src: submission form
+    Type: string
+    Req: 'Yes'
+  pi_email:
+    Desc: Email of the Principal Investigator 
+    Src: submission form
+    Type: string
+    Req: 'Yes'
+  pi_2_name:
+    Desc: Name of the co-Principal Investigator. 
+    Src: submission form
+    Type: string
+    Req: 'No'
+  pi_2_email:
+    Desc: Email of the co-Principal Investigator. 
+    Src: submission form
+    Type: string
+    Req: 'No'
+  phs_accession:
+    Desc: dbGaP study accession number. 
+    Src: submission form
+    Type: string
+    Req: 'Yes'
+  bioproject:
+    Desc: BioProject  (PRJ) accession number 
+    Src: submission form
+    Type: string
+    Req: 'Yes'
+  cds_bucket:
+    Desc: the primary bucket for depositing data. 
+    Src: submission form
+    Type: string
+    Req: 'Yes'
+  cds_bucket_other:
+    Desc: secondary bucket for depositing data (non-sequence data files) 
+    Src: submission form
+    Type: string
+    Req: 'Yes'
+  #Funding props
+  funding_agency:
+    Desc: The funding source organization/Sponsor
+    Src:  submission form
+    Type: string
+    Req: 'Yes'
+  funding_source_program_name:
+    Desc: The name of the program that is providing funding 
+    Src: submission form
+    Type: string
+    Req: 'Yes'
+  grant_id:
+    Desc: grant id or contract id
+    Src: submission form
+    Type: string
+    Req: 'No'
+  clinical_trial_system:
+    Desc: the name of the organization that provides the clinical trial identifier (use if the study is a clinical trial)
+    Src: submission form
+    Type: string
+    Req: 'No'
+  clinical_trial_identifier:
+    Desc: identifier in the clinical trial system
+    Src: submission form
+    Type: string
+    Req: 'No'
+  clinical_trial_arm:
+    Desc: ARM of the clinical trial (if it exists)
+    Src: submission form
+    Type: string
+    Req: 'No'
+  #Additional Study props
+  organism_species:
+    Desc: The organism/species that is used for the experiment
+    Src: submission form
+    Type: string
+    Req: 'Yes'
+  adult_or_childhood_study:
+    Desc: If the study involves Adults or Children
+    Src: submission form
+    Type:
+      - Adult
+      - Pediatric
+    Req: 'Yes'
+  number_of_subjects:
+    Desc: How many cases or subjects participated in the study
+    Src: submission form
+    Type: number
+    Req: 'Yes'
+  number_of_samples:
+    Desc: How many samples are there in the study?
+    Src: submission form
+    Type: number
+    Req: 'Yes'
+  study_data_types:
+    Desc: How many samples are there in the study?
+    Src: submission form
+    Type: string
+    Req: 'Yes'
+  experimental_strategy_and_data_subtype:
+    Desc: What is the experimental strategy used for the study (or what type of data subtypes exist in the study)?
+    Src: submission form
+    Type: string
+    Req: 'Yes'
+  data_access_level:
+    Desc: Is the data access controlled or open?
+    Src: submission form
+    Type:
+      - Controlled
+      - Open
+    Req: 'Yes'
+  file_types_and_format:
+    Desc: Specific kind of files in the dataset that will be uploaded to CDS
+    Src: submission form
+    Type: string
+    Req: 'Yes'
+  size_of_data_being_uploaded:
+    Desc: Size of the data being uploaded to CDS
+    Src: submission form
+    Type: string
+    Req: 'Yes'
+  # Subject props
+  subject_id:
+    Desc: An identifier, such as a number or a string that may contain metadata information, for a subject who has taken part in the investigation or study.
+    Src: submission form
+    Type: string
+    Req: 'Yes'
+  gender:
+    Desc: Text designations that identify gender. Gender is described as the assemblage of properties that distinguish people on the basis of their societal roles. [Explanatory Comment 1 Identification of gender is based upon self-report and may come from a form, questionnaire, interview, etc.
+    Src: submission form
+    Type: 
+      - Female
+      - Male
+      - Unknown
+    Req: 'Yes'
+  race:
+    Desc: Race of the subject
+    Src: submission form
+    Type:
+      - Asian
+      - African American
+      - White
+      - Unknown
+    Req: 'Yes'
+  ethnicity:
+    Desc: An individual's self-described social and cultural grouping, specifically whether an individual describes themselves as Hispanic or Latino. The provided values are based on the categories defined by the U.S. Office of Management and Business and used by the U.S. Census Bureau.
+    Src: submission form
+    Type:
+      - Hispanic or Latino
+      - Unknown
+    Req: 'Yes'
+  dbGaP_subject_id:
+    Desc: the subject_id in dbGaP
+    Src: submission form
+    Type: string
+    Req: 'No'
+  # Diagnosis props
+  diagnosis_id:
+    Desc: '?'
+    Src: submission form
+    Type: string
+    Req: 'No'
+  disease_type:
+    Desc: Type of Disease
+    Src: submission form
+    Type: string
+    Req: 'No'
+  primary_site:
+    Desc: Primary site in the body
+    Src: submission form
+    Type: string
+    Req: 'No'
+  vital_status:
+    Desc: living or deceased
+    Src: submission form
+    Type:
+      - Alive
+      - Deceased
+      - Unknown
+    Req: 'No'
+  #Additional Diagnosis props
+  age_at_diagnosis:
+    Desc: Age at the time of diagnosis since birth
+    Src: submission form
+    Type: number
+    Req: 'No'
+  age_at_diagnosis_units:
+    Desc: '?'
+    Src: submission form
+    Type: string
+    Req: 'No'
+  days_to_last_followup:
+    Desc: '?'
+    Src: submission form
+    Type: number
+    Req: 'No'
+  primary_diagnosis:
+    Desc: Text term used to describe the patient's histologic diagnosis, as described by the World Health Organization's (WHO) International Classification of Diseases for Oncology (ICD-O).
+    Src: submission form
+    Type: string
+    Req: 'No'
+  morphology:
+    Desc: The third edition of the International Classification of Diseases for Oncology, published in 2000 used principally in tumor and cancer registries for coding the site (topography) and the histology (morphology) of neoplasms. The study of the structure of the cells and their arrangement to constitute tissues and, finally, the association among these to form organs. In pathology, the microscopic process of identifying normal and abnormal morphologic characteristics in tissues, by employing various cytochemical and immunocytochemical stains. A system of numbered categories for representation of data.
+    Src: submission form
+    Type: string
+    Req: 'No'
+  tissue_or_organ_of_origin:
+    Desc: The text term used to describe the anatomic site of origin, of the patient's malignant disease, as described by the World Health Organization's (WHO) International Classification of Diseases for Oncology (ICD-O).
+    Src: submission form
+    Type: string
+    Req: 'No'
+  site_of_resection_or_biopsy:
+    Desc: The text term used to describe the anatomic site of origin, of the patient's malignant disease, as described by the World Health Organization's (WHO) International Classification of Diseases for Oncology (ICD-O).
+    Src: submission form
+    Type: string
+    Req: 'No'
+  tumor_grade:
+    Desc: Numeric value to express the degree of abnormality of cancer cells, a measure of differentiation and aggressiveness.
+    Src: submission form
+    Type: string
+    Req: 'No'
+  tumor_stage_ajcc_clinical_t:
+    Desc: Extent of the primary cancer based on evidence obtained from clinical assessment parameters determined prior to treatment.
+    Src: submission form
+    Type: string
+    Req: 'No'
+  tumor_stage_ajcc_clinical_n:
+    Desc: Extent of the regional lymph node involvement for the cancer based on evidence obtained from clinical assessment parameters determined prior to treatment.
+    Src: submission form
+    Type: string
+    Req: 'No'
+  tumor_stage_ajcc_clinical_m:
+    Desc: Extent of the distant metastasis for the cancer based on evidence obtained from clinical assessment parameters determined prior to treatment.
+    Src: submission form
+    Type: string
+    Req: 'No'
+  progression_or_recurrence:
+    Desc: Yes/No/Unknown indicator to identify whether a patient has had a new tumor event after initial treatment.
+    Src: submission form
+    Type:
+      - Yes
+      - No
+      - Unknown
+    Req: 'No'
+  days_to_recurrence:
+    Desc: Number of days between the date used for index and the date the patient's disease recurred
+    Src: submission form
+    Type: number
+    Req: 'No'
+  days_to_last_known_disease_status:
+    Desc: Time interval from the date of last follow up to the date of initial pathologic diagnosis, represented as a calculated number of days.
+    Src: submission form
+    Type: number
+    Req: 'No'
+  last_known_disease_status:
+    Desc: Text term that describes the last known state or condition of an individual's neoplasm. 
+    Src: submission form
+    Type: string
+    Req: 'No'
+  # Treatment Props
+  treatment_id:
+    Desc: treatment identifier
+    Src: submission form
+    Type: string
+    Req: 'No'
+  treatment_type:
+    Desc: Text term that describes the kind of treatment administered.
+    Src: submission form
+    Type: string
+    Req: 'No'
+  days_to_treatment:
+    Desc: Number of days between the date used for index and the date the treatment started.
+    Src: submission form
+    Type: number
+    Req: 'No'
+  treatment_outcome:
+    Desc: Text term that describes the patient's final outcome after the treatment was administered.
+    Src: submission form
+    Type: string
+    Req: 'No'
+  therapeutic_agents:
+    Desc: Text identification of the individual agent(s) used as part of a treatment regimen.
+    Src: submission form
+    Type: string
+    Req: 'No'
+  # Sample Props
+  sample_id:
+    Desc: Sample identifier
+    Src: submission form
+    Type: string
+    Req: 'Yes'
+  sample_description:
+    Desc: Description of the sample
+    Src: submission form
+    Type: string
+    Req: 'No'
+  biosample_accession:
+    Desc: BioSample (SAMN) accession number
+    Src: submission form
+    Type: string
+    Req: 'No'
+  sample_type:
+    Desc: Text term to describe the source of a biospecimen used for a laboratory test.
+    Src: submission form
+    Type: string
+    Req: 'Yes'
+  # Additional Sample props
+  sample_tumor_status:
+    Desc: Normal or Tumor Sample Pathology Indicator
+    Src: submission form
+    Type: string
+    Req: 'No'
+  sample_anatomic_site:
+    Desc: Text term that represents the name of the primary disease site of the submitted tumor sample.
+    Src: submission form
+    Type: string
+    Req: 'No'
+  sample_age_at_collection:
+    Desc: The number of days from the index date to the date a sample was collected for a specific study or project.
+    Src: submission form
+    Type: number
+    Req: 'No'
+  derived_from_specimen:
+    Desc: identifer of parent specimen for this sample
+    Src: submission form
+    Type: string
+    Req: 'No'
+  #File props
+  file_id:
+    Desc: identifier
+    Src: submission form
+    Type: string
+    Req: 'Yes'
+  file_name:
+    Desc: name of file
+    Src: submission form
+    Type: string
+    Req: 'Yes'
+  file_type:
+    Desc: what type of file
+    Src: submission form
+    Type: string
+    Req: 'Yes'
+  file_description:
+    Desc: Description
+    Src: submission form
+    Type: string
+    Req: 'No'
+  file_size:
+    Desc: Size in bytes
+    Src: submission form
+    Type: number
+    Req: 'Yes'
+  md5sum:
+    Desc: md5 hash 
+    Src: submission form
+    Type: string
+    Req: 'Yes'
+  checksum_value:
+    Desc: checksum (hash) for file (using checksum_algorithm)
+    Src: submission form
+    Type: string
+    Req: 'No'
+  checksum_algorithm:
+    Desc: cryptographic checksum algorithm 
+    Src: submission form
+    Type: string
+    Req: 'No'
+  file_url_in_cds:
+    Desc: location of the file on the CDS cloud 
+    Src: submission form
+    Type: string
+    Req: 'Yes'
+  #Genomic Props
+  library_id:
+    Desc: Short unique identifier for the sequencing library.
+    Src: submission form
+    Type: string
+    Req: 'No'
+  library_strategy:
+    Desc: library strategy
+    Src: submission form
+    Type: string
+    Req: 'No'
+  library_source:
+    Desc: The Library Source specifies the type of source material that is being sequenced
+    Src: submission form
+    Type: string
+    Req: 'No'
+  library_selection:
+    Desc: Library Selection Method
+    Src: submission form
+    Type: string
+    Req: 'No'
+  library_layout:
+    Desc: Paired-end or Single
+    Src: submission form
+    Type: string
+    Req: 'No'
+  platform:
+    Desc: Sequencing Platform used for Sequencing
+    Src: submission form
+    Type: string
+    Req: 'No'
+  instrument_model:
+    Desc: Instrument model used for sequencing
+    Src: submission form
+    Type: string
+    Req: 'No'
+  design_description:
+    Desc: Free-form description of the methods used to create the sequencing library; a brief 'materials and methods' section.
+    Src: submission form
+    Type: string
+    Req: 'No'
+  reference_genome_assembly:
+    Desc: This is only if you are submitting a bam file aligned against a NCBI assembly.
+    Src: submission form
+    Type: string
+    Req: 'No'
+  fasta_file:
+    Desc: Please provide the name of the custom assembly fasta file used during alignment
+    Src: submission form
+    Type: string
+    Req: 'No'
+  bases:
+    Desc: Count of unique basecalls present in the data. Please count each base only once if using secondary alignments.
+    Src: submission form
+    Type: number
+    Req: 'No'
+  number_of_reads:
+    Desc: Count of the number of reads in the data. Please count each read only once if using secondary alignments.
+    Src: submission form
+    Type: number
+    Req: 'No'
+  coverage:
+    Desc: Depth of coverage on assembly used. Found by (Unique Aligned Basecalls)/(Reference Length)
+    Src: submission form
+    Type: number
+    Req: 'No'
+  avg_read_length:
+    Desc: Found by (Bases)/(Reads)
+    Src: submission form
+    Type: number
+    Req: 'No'
+  sequence_alignment_software:
+    Desc: The name of the software program used to align nucleotide sequencing data.
+    Src: submission form
+    Type: string
+    Req: 'No'
+  #Proteomic props
+  proteomic_id:
+    Desc: identifier
+    Src: submission form
+    Type: string
+    Req: 'No'
+  protocol:
+    Desc: protocols used to run the experiment
+    Src: submission form
+    Type: string
+    Req: 'No'
+  experiment_name:
+    Desc: experiment name
+    Src: submission form
+    Type: string
+    Req: 'No'
+  aliquot_id:
+    Desc: Aliquots used in an experimental run of the study
+    Src: submission form
+    Type: string
+    Req: 'No'
+  # Imaging props
+  image_id:
+    Desc: Image identifier
+    Src: submission form
+    Type: string
+    Req: 'No'
+  protocol:
+    Desc: Protocol used to produce the image series
+    Src: submission form
+    Type: string
+    Req: 'No'
+  organ_or_tissue:
+    Desc: Part of the body the images represent
+    Src: submission form
+    Type: string
+    Req: 'No'
+  series_number_id:
+    Desc: A number that identifies this Series
+    Src: submission form
+    Type: number
+    Req: 'No'
+  image_count:
+    Desc: Number of images in this series
+    Src: submission form
+    Type: number
+    Req: 'No'
+  modality:
+    Desc: Type of equipement that originally acquired the data
+    Src: submission form
+    Type: string
+    Req: 'No'
+  image_equipment_manufacturer:
+    Desc: Name of the manufacturer of the equipment that produced the composite images
+    Src: submission form
+    Type: string
+    Req: 'No'
+  image_software:
+    Desc: Software used on equipement
+    Src: submission form
+    Type: string
+    Req: 'No'
+
+
+
+
+
+
+
+
+  
+
