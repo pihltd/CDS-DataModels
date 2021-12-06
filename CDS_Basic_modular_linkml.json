@@ -1,0 +1,607 @@
+{
+   "$defs": {
+      "AccessType": {
+         "description": "",
+         "enum": [
+            "Open",
+            "Controlled"
+         ],
+         "title": "AccessType",
+         "type": "string"
+      },
+      "AdditionalDiagnosis": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {
+            "age_at_diagnosis": {
+               "type": "integer"
+            },
+            "age_at_diagnosis_units": {
+               "type": "string"
+            },
+            "days_to_last_followup": {
+               "type": "integer"
+            },
+            "days_to_last_known_disease_status": {
+               "type": "integer"
+            },
+            "days_to_recurrence": {
+               "type": "integer"
+            },
+            "last_known_disease_status": {
+               "type": "string"
+            },
+            "morphology": {
+               "type": "string"
+            },
+            "primary_diagnosis": {
+               "type": "string"
+            },
+            "progression_or_recurrence": {
+               "$ref": "#/$defs/ProgressionType"
+            },
+            "site_of_resection_or_biopsy": {
+               "type": "string"
+            },
+            "tissue_or_organ_of_origin": {
+               "type": "string"
+            },
+            "tumor_grade": {
+               "type": "string"
+            },
+            "tumor_stage_ajcc_clinical_m": {
+               "type": "string"
+            },
+            "tumor_stage_ajcc_clinical_n": {
+               "type": "string"
+            },
+            "tumor_stage_ajcc_clinical_t": {
+               "type": "string"
+            }
+         },
+         "required": [],
+         "title": "AdditionalDiagnosis",
+         "type": "object"
+      },
+      "AdditionalSample": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {
+            "derived_from_specimen": {
+               "type": "string"
+            },
+            "sample_age_at_collection": {
+               "type": "integer"
+            },
+            "sample_tumor_anatomic_site": {
+               "type": "string"
+            },
+            "sample_tumor_status": {
+               "type": "string"
+            }
+         },
+         "required": [],
+         "title": "AdditionalSample",
+         "type": "object"
+      },
+      "AdditionalStudy": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {
+            "adult_or_childhood_study": {
+               "$ref": "#/$defs/StudyType"
+            },
+            "data_access_level": {
+               "$ref": "#/$defs/AccessType"
+            },
+            "experimental_strategy_and_data_subtype": {
+               "type": "string"
+            },
+            "file_types_and_format": {
+               "type": "string"
+            },
+            "number_of_samples": {
+               "type": "integer"
+            },
+            "number_of_subjects": {
+               "type": "integer"
+            },
+            "organism_species": {
+               "type": "string"
+            },
+            "size_of_data_being_uploaded": {
+               "type": "string"
+            },
+            "study_data_types": {
+               "type": "string"
+            }
+         },
+         "required": [
+            "organism_species",
+            "adult_or_childhood_study",
+            "number_of_subjects",
+            "number_of_samples",
+            "study_data_types",
+            "experimental_strategy_and_data_subtype",
+            "data_access_level",
+            "file_types_and_format",
+            "size_of_data_being_uploaded"
+         ],
+         "title": "AdditionalStudy",
+         "type": "object"
+      },
+      "ClinicalDemographic": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {
+            "dbGaP_subject_id": {
+               "type": "string"
+            },
+            "ethnicity": {
+               "$ref": "#/$defs/EthnicityType"
+            },
+            "gender": {
+               "$ref": "#/$defs/GenderType"
+            },
+            "race": {
+               "$ref": "#/$defs/RaceType"
+            },
+            "subject_id": {
+               "type": "string"
+            }
+         },
+         "required": [
+            "subject_id",
+            "gender",
+            "race",
+            "ethnicity",
+            "dbGaP_subject_id"
+         ],
+         "title": "ClinicalDemographic",
+         "type": "object"
+      },
+      "Container": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {
+            "additional_diagnoses": {
+               "items": {
+                  "$ref": "#/$defs/AdditionalDiagnosis"
+               },
+               "type": "array"
+            },
+            "additional_samples": {
+               "items": {
+                  "$ref": "#/$defs/AdditionalSample"
+               },
+               "type": "array"
+            },
+            "additional_studies": {
+               "items": {
+                  "$ref": "#/$defs/AdditionalStudy"
+               },
+               "type": "array"
+            },
+            "clinical_demographics": {
+               "items": {
+                  "$ref": "#/$defs/ClinicalDemographic"
+               },
+               "type": "array"
+            },
+            "diagnoses": {
+               "items": {
+                  "$ref": "#/$defs/Diagnosis"
+               },
+               "type": "array"
+            },
+            "files": {
+               "items": {
+                  "$ref": "#/$defs/File"
+               },
+               "type": "array"
+            },
+            "funds": {
+               "items": {
+                  "$ref": "#/$defs/Funding"
+               },
+               "type": "array"
+            },
+            "genomic_information_section": {
+               "items": {
+                  "$ref": "#/$defs/GenomicInformation"
+               },
+               "type": "array"
+            },
+            "imaging_information_section": {
+               "items": {
+                  "$ref": "#/$defs/ImagingInformation"
+               },
+               "type": "array"
+            },
+            "proteomic_information_section": {
+               "items": {
+                  "$ref": "#/$defs/ProteomicInformation"
+               },
+               "type": "array"
+            },
+            "samples": {
+               "items": {
+                  "$ref": "#/$defs/Sample"
+               },
+               "type": "array"
+            },
+            "studies": {
+               "items": {
+                  "$ref": "#/$defs/Study"
+               },
+               "type": "array"
+            },
+            "treatments": {
+               "items": {
+                  "$ref": "#/$defs/Treatment"
+               },
+               "type": "array"
+            }
+         },
+         "required": [],
+         "title": "Container",
+         "type": "object"
+      },
+      "Diagnosis": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {
+            "diagnosis_id": {
+               "type": "string"
+            },
+            "disease_type": {
+               "type": "string"
+            },
+            "primary_site": {
+               "type": "string"
+            },
+            "vital_status": {
+               "$ref": "#/$defs/VitalStatusType"
+            }
+         },
+         "required": [],
+         "title": "Diagnosis",
+         "type": "object"
+      },
+      "EthnicityType": {
+         "description": "",
+         "enum": [
+            "Hispanic or Latino",
+            "Unknown"
+         ],
+         "title": "EthnicityType",
+         "type": "string"
+      },
+      "File": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {
+            "checksum_algorithm": {
+               "type": "string"
+            },
+            "checksum_value": {
+               "type": "string"
+            },
+            "file_description": {
+               "type": "string"
+            },
+            "file_id": {
+               "type": "string"
+            },
+            "file_name": {
+               "type": "string"
+            },
+            "file_size": {
+               "type": "integer"
+            },
+            "file_type": {
+               "type": "string"
+            },
+            "file_url_in_cds": {
+               "type": "string"
+            },
+            "md5sum": {
+               "type": "string"
+            }
+         },
+         "required": [
+            "file_id",
+            "file_name",
+            "file_type",
+            "file_size",
+            "md5sum",
+            "file_url_in_cds"
+         ],
+         "title": "File",
+         "type": "object"
+      },
+      "Funding": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {
+            "clinical_trial_arm": {
+               "type": "string"
+            },
+            "clinical_trial_identifier": {
+               "type": "string"
+            },
+            "clinical_trial_system": {
+               "type": "string"
+            },
+            "funding_agency": {
+               "type": "string"
+            },
+            "funding_source_program_name": {
+               "type": "string"
+            },
+            "grant_id": {
+               "type": "string"
+            }
+         },
+         "required": [
+            "funding_agency",
+            "funding_source_program_name"
+         ],
+         "title": "Funding",
+         "type": "object"
+      },
+      "GenderType": {
+         "description": "",
+         "enum": [
+            "Male",
+            "Female",
+            "Unknown"
+         ],
+         "title": "GenderType",
+         "type": "string"
+      },
+      "GenomicInformation": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {
+            "avg_read_length": {
+               "type": "integer"
+            },
+            "bases": {
+               "type": "integer"
+            },
+            "coverage": {
+               "type": "integer"
+            },
+            "design_description": {
+               "type": "string"
+            },
+            "fasta_file": {
+               "type": "string"
+            },
+            "instrument_model": {
+               "type": "string"
+            },
+            "library_id": {
+               "type": "string"
+            },
+            "library_layout": {
+               "type": "string"
+            },
+            "library_selection": {
+               "type": "string"
+            },
+            "library_source": {
+               "type": "string"
+            },
+            "library_strategy": {
+               "type": "string"
+            },
+            "number_of_reads": {
+               "type": "integer"
+            },
+            "platform": {
+               "type": "string"
+            },
+            "reference_genome_assembly": {
+               "type": "string"
+            },
+            "sequence_alignment_software": {
+               "type": "string"
+            }
+         },
+         "required": [],
+         "title": "GenomicInformation",
+         "type": "object"
+      },
+      "ImagingInformation": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {
+            "image_count": {
+               "type": "integer"
+            },
+            "image_equipment_manufacturer": {
+               "type": "string"
+            },
+            "image_id": {
+               "type": "string"
+            },
+            "image_software": {
+               "type": "string"
+            },
+            "modality": {
+               "type": "string"
+            },
+            "organ_or_tissue": {
+               "type": "string"
+            },
+            "protocol": {
+               "type": "string"
+            },
+            "series_number_id": {
+               "type": "integer"
+            }
+         },
+         "required": [],
+         "title": "ImagingInformation",
+         "type": "object"
+      },
+      "ProgressionType": {
+         "description": "",
+         "enum": [
+            "True",
+            "False",
+            "Unknown"
+         ],
+         "title": "ProgressionType",
+         "type": "string"
+      },
+      "ProteomicInformation": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {
+            "aliquot_id": {
+               "type": "string"
+            },
+            "experiment_name": {
+               "type": "string"
+            },
+            "proteomic_id": {
+               "type": "string"
+            },
+            "protocol": {
+               "type": "string"
+            }
+         },
+         "required": [],
+         "title": "ProteomicInformation",
+         "type": "object"
+      },
+      "RaceType": {
+         "description": "",
+         "enum": [
+            "Asian",
+            "African American",
+            "White",
+            "Unknown"
+         ],
+         "title": "RaceType",
+         "type": "string"
+      },
+      "Sample": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {
+            "biosample_accession": {
+               "type": "string"
+            },
+            "sample_description": {
+               "type": "string"
+            },
+            "sample_id": {
+               "type": "string"
+            },
+            "sample_type": {
+               "type": "string"
+            }
+         },
+         "required": [
+            "sample_id",
+            "sample_type"
+         ],
+         "title": "Sample",
+         "type": "object"
+      },
+      "Study": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {
+            "bioproject": {
+               "type": "string"
+            },
+            "cds_bucket": {
+               "type": "string"
+            },
+            "cds_bucket_other": {
+               "type": "string"
+            },
+            "phs_accession": {
+               "type": "string"
+            },
+            "pi_2_email": {
+               "type": "string"
+            },
+            "pi_2_name": {
+               "type": "string"
+            },
+            "pi_email": {
+               "type": "string"
+            },
+            "pi_name": {
+               "type": "string"
+            },
+            "short_description": {
+               "type": "string"
+            },
+            "slots": {
+               "type": "string"
+            }
+         },
+         "required": [],
+         "title": "Study",
+         "type": "object"
+      },
+      "StudyType": {
+         "description": "",
+         "enum": [
+            "Adult",
+            "Pediatric"
+         ],
+         "title": "StudyType",
+         "type": "string"
+      },
+      "Treatment": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {
+            "days_to_treatment": {
+               "type": "integer"
+            },
+            "therapeutic_agents": {
+               "type": "string"
+            },
+            "treatment_id": {
+               "type": "string"
+            },
+            "treatment_outcome": {
+               "type": "string"
+            },
+            "treatment_type": {
+               "type": "string"
+            }
+         },
+         "required": [],
+         "title": "Treatment",
+         "type": "object"
+      },
+      "VitalStatusType": {
+         "description": "",
+         "enum": [
+            "Alive",
+            "Deceased",
+            "Unknown"
+         ],
+         "title": "VitalStatusType",
+         "type": "string"
+      }
+   },
+   "$id": "https://w3id.org/linkml/examples/personinfo",
+   "$schema": "http://json-schema.org/draft-07/schema#",
+   "additionalProperties": true,
+   "properties": {},
+   "required": [],
+   "title": "CDSInfo",
+   "type": "object"
+}
+

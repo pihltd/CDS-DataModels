@@ -1,0 +1,425 @@
+id: https://w3id.org/linkml/examples/personinfo
+name: CDSInfo
+prefixes:
+  linkml: https://w3id.org/linkml/
+imports:
+  - linkml:types
+default_range: string
+
+classes:
+  study:
+    attributes:
+      - slots
+      - short_description
+      - pi_name 
+      - pi_email
+      - pi_2_name
+      - pi_2_email
+      - phs_accession
+      - bioproject
+      - cds_bucket
+      - cds_bucket_other
+  funding:
+    slots:
+      - funding_agency
+      - funding_source_program_name
+      - grant_id
+      - clinical_trial_system
+      - clinical_trial_identifier
+      - clinical_trial_arm
+  additional_study:
+    slots:
+      - organism_species
+      - adult_or_childhood_study
+      - number_of_subjects
+      - number_of_samples
+      - study_data_types
+      - experimental_strategy_and_data_subtype
+      - data_access_level
+      - file_types_and_format
+      - size_of_data_being_uploaded
+  clinical_demographic:
+    slots:
+      - subject_id
+      - gender
+      - race
+      - ethnicity
+      - dbGaP_subject_id
+  diagnosis:
+    slots:
+      - diagnosis_id
+      - disease_type
+      - primary_site
+      - vital_status
+  additional_diagnosis:
+    slots:
+      - age_at_diagnosis
+      - age_at_diagnosis_units
+      - days_to_last_followup
+      - primary_diagnosis
+      - morphology
+      - tissue_or_organ_of_origin
+      - site_of_resection_or_biopsy
+      - tumor_grade
+      - tumor_stage_ajcc_clinical_t
+      - tumor_stage_ajcc_clinical_n
+      - tumor_stage_ajcc_clinical_m
+      - progression_or_recurrence
+      - days_to_recurrence
+      - days_to_last_known_disease_status
+      - last_known_disease_status
+  treatment:
+    slots:
+      - treatment_id
+      - treatment_type
+      - days_to_treatment
+      - treatment_outcome
+      - therapeutic_agents
+  sample:
+    slots:
+      - sample_id
+      - sample_description
+      - biosample_accession
+      - sample_type
+  additional_sample:
+    slots:
+      - sample_tumor_status
+      - sample_tumor_anatomic_site
+      - sample_age_at_collection
+      - derived_from_specimen
+  file:
+    slots:
+      - file_id
+      - file_name
+      - file_type
+      - file_description
+      - file_size
+      - md5sum
+      - checksum_value
+      - checksum_algorithm
+      - file_url_in_cds
+  genomic_information:
+    slots:
+      - library_id
+      - library_strategy
+      - library_source
+      - library_selection
+      - library_layout
+      - platform
+      - instrument_model
+      - design_description
+      - reference_genome_assembly
+      - fasta_file
+      - bases
+      - number_of_reads
+      - coverage
+      - avg_read_length
+      - sequence_alignment_software
+  proteomic_information:
+    slots:
+      - proteomic_id
+      - protocol
+      - experiment_name
+      - aliquot_id   
+  imaging_information:
+    slots:
+      - image_id
+      - protocol
+      - organ_or_tissue
+      - series_number_id
+      - image_count
+      - modality
+      - image_equipment_manufacturer
+      - image_software
+  Container:
+    attributes:
+      studies:
+        multivalued: true
+        inlined_as_list: true
+        range: study
+      funds:
+        multivalued: true
+        inlined_as_list: true
+        range: funding
+      additional_studies:
+        multivalued: true
+        inlined_as_list: true
+        range: additional_study
+      clinical_demographics:
+        multivalued: true
+        inlined_as_list: true
+        range: clinical_demographic
+      diagnoses:
+        multivalued: true
+        inlined_as_list: true
+        range: diagnosis
+      additional_diagnoses:
+        multivalued: true
+        inlined_as_list: true
+        range: additional_diagnosis
+      treatments:
+        multivalued: true
+        inlined_as_list: true
+        range: treatment
+      samples:
+        multivalued: true
+        inlined_as_list: true
+        range: sample
+      additional_samples:
+        multivalued: true
+        inlined_as_list: true
+        range: additional_sample
+      files:
+        multivalued: true
+        inlined_as_list: true
+        range: file
+      genomic_information_section:
+        multivalued: true
+        inlined_as_list: true
+        range: genomic_information
+      proteomic_information_section:
+        multivalued: true
+        inlined_as_list: true
+        range: proteomic_information
+      imaging_information_section:
+        multivalued: true
+        inlined_as_list: true
+        range: imaging_information
+slots:
+  study_title:
+    required: true
+  short_description:
+    required: true
+  pi_name:  
+    required: true
+  pi_email:
+    required: true
+  pi_2_name:
+  pi_2_email:
+  phs_accession:
+    required: true
+  bioproject:
+    required: true
+  cds_bucket:
+    required: true
+  cds_bucket_other:
+    required: true
+  funding_agency:
+    required: true
+  funding_source_program_name:
+    required: true
+  grant_id:
+  clinical_trial_system:
+  clinical_trial_identifier:
+  clinical_trial_arm:
+  organism_species:
+    required: true
+  adult_or_childhood_study:
+    required: true
+    range: StudyType  #See enums section
+  number_of_subjects:
+    required: true
+    range: integer
+  number_of_samples:
+    required: true
+    range: integer
+  study_data_types:
+    required: true
+  experimental_strategy_and_data_subtype:
+    required: true
+  data_access_level:
+    required: true
+    range: AccessType #See enums section
+  file_types_and_format:
+    required: true
+  size_of_data_being_uploaded:
+    required: true
+  subject_id:
+    required: true
+  gender:
+    required: true
+    range: GenderType
+  race:
+    required: true
+    range: RaceType
+  ethnicity:
+    required: true
+    range: EthnicityType
+  dbGaP_subject_id:
+    required: true
+  diagnosis_id:
+  disease_type:
+  primary_site:
+  vital_status:
+    range: VitalStatusType
+  age_at_diagnosis:
+    range: integer
+  age_at_diagnosis_units:
+  days_to_last_followup:
+    range: integer
+  primary_diagnosis:
+  morphology:
+  tissue_or_organ_of_origin:
+  site_of_resection_or_biopsy:
+  tumor_grade:
+  tumor_stage_ajcc_clinical_t:
+  tumor_stage_ajcc_clinical_n:
+  tumor_stage_ajcc_clinical_m:
+  progression_or_recurrence:
+    range: ProgressionType
+  days_to_recurrence:
+    range: integer
+  days_to_last_known_disease_status:
+    range: integer
+  last_known_disease_status:
+  treatment_id:
+  treatment_type:
+  days_to_treatment:
+    range: integer
+  treatment_outcome:
+  therapeutic_agents:
+  sample_id:
+    required: true
+  sample_description:
+  biosample_accession:
+  sample_type:
+    required: true
+  sample_tumor_status:
+  sample_tumor_anatomic_site:
+  sample_age_at_collection:
+    range: integer
+  derived_from_specimen:
+  file_id:
+    required: true
+  file_name:
+    required: true
+  file_type:
+    required: true
+  file_description:
+  file_size:
+    required: true
+    range: integer
+  md5sum:
+    required: true
+  checksum_value:
+  checksum_algorithm:
+  file_url_in_cds:
+    required: true
+  library_id:
+  library_strategy:
+  library_source:
+  library_selection:
+  library_layout:
+  platform:
+  instrument_model:
+  design_description:
+  reference_genome_assembly:
+  fasta_file:
+  bases:
+    range: integer
+  number_of_reads:
+    range: integer
+  coverage:
+    range: integer
+  avg_read_length:
+    range: integer
+  sequence_alignment_software:
+  proteomic_id:
+  protocol:
+  experiment_name:
+  aliquot_id:    
+  image_id:
+  organ_or_tissue:
+  series_number_id:
+    range: integer
+  image_count:
+    range: integer
+  modality:
+  image_equipment_manufacturer:
+  image_software:
+  studies:
+    multivalued: true
+    inlined_as_list: true
+    range: study
+  funds:
+    multivalued: true
+    inlined_as_list: true
+    range: funding
+  additional_studies:
+    multivalued: true
+    inlined_as_list: true
+    range: additional_study
+  clinical_demographics:
+    multivalued: true
+    inlined_as_list: true
+    range: clinical_demographic
+  diagnoses:
+    multivalued: true
+    inlined_as_list: true
+    range: diagnosis
+  additional_diagnoses:
+    multivalued: true
+    inlined_as_list: true
+    range: additional_diagnosis
+  treatments:
+    multivalued: true
+    inlined_as_list: true
+    range: treatment
+  samples:
+    multivalued: true
+    inlined_as_list: true
+    range: sample
+  additional_samples:
+    multivalued: true
+    inlined_as_list: true
+    range: additional_sample
+  files:
+    multivalued: true
+    inlined_as_list: true
+    range: file
+  genomic_information_section:
+    multivalued: true
+    inlined_as_list: true
+    range: genomic_information
+  proteomic_information_section:
+    multivalued: true
+    inlined_as_list: true
+    range: proteomic_information
+  imaging_information_section:
+    multivalued: true
+    inlined_as_list: true
+    range: imaging_information
+enums:
+  StudyType:
+    permissible_values:
+      Adult:
+      Pediatric:
+  AccessType:
+    permissible_values:
+      Open:
+      Controlled:
+  GenderType:
+    permissible_values:
+      Male:
+      Female:
+      Unknown:
+  RaceType:
+    permissible_values:
+      Asian:
+      African American:
+      White:
+      Unknown:
+  EthnicityType:
+    permissible_values:
+      Hispanic or Latino:
+      Unknown:
+  VitalStatusType:
+    permissible_values:
+      Alive:
+      Deceased:
+      Unknown:
+  ProgressionType:
+    permissible_values:
+      Yes:
+      No:
+      Unknown:
