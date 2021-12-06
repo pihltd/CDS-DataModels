@@ -204,4 +204,37 @@ Nodes:
       - modality
       - image_equipment_manufacturer
       - image_software
+Relationships:
+  member_of:
+    Mul: many_to_one
+    Ends:
+      - Src: clinical_demographc
+        Dst: study
+      - Src: sample
+        Dst: clinical_demographic
+    Props: null
+  of_sample:
+    Mul: many_to_one
+    Ends:
+      - Src: diagnosis
+        Dst: sample
+      - Src: additional_diagnosis
+        Dst: sample
+      - Src: treatment
+        Dst: sample
+      - Src: additional_sample
+        Dst: sample
+      - Src: file
+        Dst: sample
+    Props: null
+  of_file:
+    Mul: many_to_one
+    Ends:
+      - Src: genomic_information
+        Dst: file
+      - Src: proteomic_information
+        Dst: file
+      - Src: imaging_information
+        Dst: file
+    Props: null
   
