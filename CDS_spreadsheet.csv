@@ -1,0 +1,111 @@
+record	field	key	multiplicicty	range	desc	schema.org
+>class	slot	identifier	cardinatlity	range	description	exact mappings
+study		n/a	n/a	n/a	Scientific study	
+study	study_title					
+study	short_description					
+study	pi_name					
+study	pi_email					
+study	pi_2_name					
+study	pi_2_email					
+study	phs_accession					
+study	bioproject					
+study	cds_bucket					
+study	cds_bucket_other					
+funding		n/a	n/a	n/a	An institution	
+funding	funding_agency					
+funding	funding_source_program_name					
+funding	grant_id					
+funding	clinical_trial_system					
+funding	clinical_trial_identifier					
+funding	clinical_trial_arm					
+additional_study		n/a	n/a	n/a	additional study information	
+additional_study	organism_species					
+additional_study	adult_or_childhood_study					
+additional_study	number_of_subjects					
+additional_study	number_of_samples					
+additional_study	study_data_types					
+additional_study	experimental_strategy_and_data_subtype					
+additional_study	file_types_and_format					
+additional_study	size_of_data_being_uploaded					
+clinical_demographics		n/a	n/a	n/a	patient info	
+clinical_demographics	subject_id					
+clinical_demographics	gender					
+clinical_demographics	race					
+clinical_demographics	ethnicity					
+clinical_demographics	dbGaP_subject_id					
+diagnosis		n/a	n/a	n/a	clinical diagnosis	
+diagnosis	diagnosis_id					
+diagnosis	disease_type					
+diagnosis	primary_site					
+diagnosis	vital_status					
+additional_diagnosis		n/a	n/a	n/a	clinical diagnosis additional information	
+additional_diagnosis	age_at_diagnosis					
+additional_diagnosis	age_at_diagnosis_units					
+additional_diagnosis	days_to_last_followup					
+additional_diagnosis	primary_diagnosis					
+additional_diagnosis	morphology					
+additional_diagnosis	tissue_or_organ_of_origin					
+additional_diagnosis	site_of_resection_or_biopsy					
+additional_diagnosis	tumor_grade					
+additional_diagnosis	tumor_stage_ajcc_clinical_t					
+additional_diagnosis	tumor_stage_ajcc_clinical_n					
+additional_diagnosis	tumor_stage_ajcc_clinical_m					
+additional_diagnosis	progression_or_recurrence					
+additional_diagnosis	days_to_last_known_disease_status					
+additional_diagnosis	last_known_disease_status					
+treatment		n/a	n/a	n/a	treatment given to the subject	
+treatment	treatment_id					
+treatment	treatment_type					
+treatment	days_to_treatment					
+treatment	treatment_outcome					
+treatment	therapeutic_agents					
+sample		n/a	n/a	n/a	sample from a subject	
+sample	sample_id					
+sample	sample_description					
+sample	biosample_accession					
+sample	sample_type					
+additional_sample		n/a	n/a	n/a	sample from a subject added details	
+additional_sample	sample_tumor_status					
+additional_sample	sample_tumor_anatomic_site					
+additional_sample	sample_age_at_collection					
+additional_sample	derived_from_specimen					
+file		n/a	n/a	n/a	data files	
+file	file_id					
+file	file_name					
+file	file_type					
+file	file_description					
+file	file_size					
+file	md5sum					
+file	checksum_value					
+file	checksum_algorithm					
+file	file_url_in_cds					
+genomic_information		n/a	n/a	n/a	information about genomic sequencing	
+genomic_information	library_id					
+genomic_information	library_strategy					
+genomic_information	library_source					
+genomic_information	library_selection					
+genomic_information	library_layout					
+genomic_information	platform					
+genomic_information	instrument_model					
+genomic_information	design_description					
+genomic_information	reference_genome_assembly					
+genomic_information	fasta_file					
+genomic_information	bases					
+genomic_information	number_of_reads					
+genomic_information	coverage					
+genomic_information	avg_read_length					
+genomic_information	sequence_alignment_software					
+proteomic_information		n/a	n/a	n/a	information about proteomic experiments	
+proteomic_information	proteomic_id					
+proteomic_information	protocol					
+proteomic_information	experiment_name					
+proteomic_information	aliquot_id					
+imaging_information		n/a	n/a	n/a	information about images	
+imaging_information	image_id					
+imaging_information	protocol					
+imaging_information	organ_or_tissue					
+imaging_information	series_number_id					
+imaging_information	image_count					
+imaging_information	modality					
+imaging_information	image_equipment_manufacturer					
+imaging_information	image_software					
